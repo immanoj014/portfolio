@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio</title>
+  <style>
+    :root {
+      --primary-color: #0077b6;
+      --secondary-color: #023e8a;
+      --background-color: #f8f9fa;
+      --accent-color: #00b4d8;
+      --text-color: #212529;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      background-color: var(--background-color);
+      color: var(--text-color);
+    }
+    header {
+      position: sticky;
+      top: 0;
+      background: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+    header nav a {
+      color: var(--primary-color);
+      text-decoration: none;
+      margin-left: 1.5rem;
+      font-weight: 600;
+      position: relative;
+    }
+    header nav a::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 2px;
+      background: var(--accent-color);
+      transition: width 0.3s;
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+    }
+    header nav a:hover::after {
+      width: 100%;
+    }
+    section {
+      max-width: 1000px;
+      margin: auto;
+      padding: 6rem 1.5rem;
+      min-height: 70vh;
+    }
+    h1, h2 {
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+    }
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 2rem;
+      min-height: 100vh;
+    }
+    .hero .text {
+      flex: 1;
+      max-width: 500px;
+    }
+    .hero .text h1 {
+      font-size: 2.2rem;
+      font-weight: bold;
+      color: var(--secondary-color);
+    }
+    .hero .text p {
+      font-size: 1.2rem;
+      color: #444;
+      margin-top: 1rem;
+    }
+    .hero .image {
+      flex: 1;
+      text-align: center;
+    }
+    .hero .image img {
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 6px solid var(--accent-color);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+    .skills span {
+      display: inline-block;
+      background: #e9ecef;
+      color: #333;
+      padding: 0.4rem 0.8rem;
+      margin: 0.3rem;
+      border-radius: 6px;
+      font-size: 0.9rem;
+    }
+    .card {
+      background: #ffffff;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    }
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+    .card h3 {
+      margin-top: 1rem;
+      color: var(--secondary-color);
+    }
+    .card a {
+      display: inline-block;
+      margin-top: 0.5rem;
+      background: var(--primary-color);
+      color: white;
+      padding: 0.5rem 1rem;
+      text-decoration: none;
+      border-radius: 4px;
+    }
+    .card a:hover {
+      background: var(--secondary-color);
+    }
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+      header nav {
+        display: none;
+      }
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 1.5rem;
+      background: #f1f1f1;
+      color: #666;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div><strong>Portfolio</strong></div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+  <section id="home" class="hero">
+     <div class="image">
+      <img src="./image1.png" alt="Profile Picture">
+    </div>
+    <div class="text">
+      <h1>Hello, I'm Manoj Maharana</h1>
+      <p>Creative Fullstack Developer with a knack for crafting intuitive user experiences. Let’s bring your ideas to life!</p>
+    </div>
+  </section>
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I’m a developer focused on building clean and user-friendly websites. I'm passionate about problem-solving, UI/UX design, and modern frontend frameworks.</p>
+    <div class="skills">
+      <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>React</span><span>NodeJs</span><span>MongoDB</span><span>Figma</span>
+    </div>
+  </section>
+  <section id="services">
+    <h2>Services</h2>
+    <div class="card">⚙️ Frontend Development</div>
+    <div class="card">🎨 UI/UX Design</div>
+    <div class="card">📱 Responsive Design</div>
+    <div class="card">🚀 Performance Optimization</div>
+  </section>
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="project-container" style="display: flex; flex-wrap: wrap; gap: 2rem;">
+    <div class="card" style="flex: 1 1 300px;">
+      <img src="images/portfolio.png" alt="Personal Portfolio">
+      <h3>Personal Portfolio</h3>
+      <p>My personal website showcasing projects, skills, and contact info. Built with HTML/CSS and deployed on GitHub Pages.</p>
+      <a href="#">View Project</a>
+    </div>
+    <div class="card" style="flex: 1 1 300px;">
+      <img src="images/landing-page.png" alt="Landing Page">
+      <h3>Landing Page</h3>
+      <p>A responsive product landing page with modern design. Created using Flexbox and optimized for mobile.</p>
+      <a href="#">View Project</a>
+    </div>
+    <div class="card" style="flex: 1 1 300px;">
+      <img src="images/ebookstore.png" alt="E-Bookstore">
+      <h3>E-Bookstore</h3>
+      <p>A simple e-commerce bookstore website where users can browse and search books. Built using HTML, CSS, and basic JS.</p>
+      <a href="#">View Project</a>
+    </div>
+    <div class="card" style="flex: 1 1 300px;">
+      <img src="images/todo-list.png" alt="To-Do List">
+      <h3>To-Do List</h3>
+      <p>A clean and interactive to-do list app to manage daily tasks. Developed using JavaScript and localStorage.</p>
+      <a href="#">View Project</a>
+    </div>
+    <div class="card" style="flex: 1 1 300px;">
+      <img src="images/calculator.png" alt="Calculator">
+      <h3>Calculator</h3>
+      <p>A fully functional calculator application with responsive UI built using HTML, CSS, and JavaScript.</p>
+      <a href="#">View Project</a>
+    </div>
+  </div>
+</section>
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>📧 Email: manoj@example.com</p>
+    <p>📞 Phone: +919090789060</p>
+    <p>Open to freelance and collaboration opportunities. Let’s connect!</p>
+  </section>
+    <footer>
+        <p>&copy; 2023 Manoj Maharana. All rights reserved.</p>     
+</body>
+</html>
